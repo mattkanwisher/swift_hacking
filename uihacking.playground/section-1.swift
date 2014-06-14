@@ -22,10 +22,6 @@ class GameScene: SKScene {
     // we do our initialization/setup here
     init(size: CGSize){
         
-        // let's grab an image, like [Embed] in AS3, results in image data like BitmapData
-        // let is to declare a constant, var a variable
-        // note that we don't type things, you actually can to resolve ambiguity sometimes
-        // but it is inferred by default and does not cause performance issues to not statically type
         /*
         let sprite = NSImage(contentsOfFile:"/Users/kanwisher/swift.jpeg")
         
@@ -43,18 +39,18 @@ class GameScene: SKScene {
         super.init(size: size)
     }
     
-    // this gets triggered automtically when the scene is presented by the view
-    // similar to Event.ADDED_TO_STAGE
     override func didMoveToView(view: SKView) {
-        
+         let sprite = NSImage(contentsOfFile:"/Users/kanwisher/projects/me/swift_hacking/block.png")
+        let skt = SKTexture(image: sprite)
         
         let s = CGSizeMake(100, 100)
         
         for x in 1..10 {
             for y in 1..10 {
-                var rectSprite = SKSpriteNode(color:SKColor.whiteColor(), size:s)
-                rectSprite.position = CGPoint(x:100*x-50 ,y:100*y-50);
                 
+                var rectSprite = SKSpriteNode(color:SKColor.whiteColor(), size:s)
+               rectSprite.position = CGPoint(x:100*x-50 ,y:100*y-50);
+                rectSprite.texture = skt
                 var myLabel = SKLabelNode(fontNamed:"Arial")
                 myLabel.text = "A"
                 myLabel.fontSize = 20
@@ -62,9 +58,10 @@ class GameScene: SKScene {
                 myLabel.color = SKColor.clearColor()
                 myLabel.position = CGPoint(x:0,y:0);
                 
-                rectSprite.addChild(myLabel)
-                self.addChild(rectSprite)
-                //self.addChild(myLabel)
+              rectSprite.addChild(myLabel)
+              self.addChild(rectSprite)
+            //  self.addChild(myLabel)
+            //    self.addChild(customView)
             }
         }
         
