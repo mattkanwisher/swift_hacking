@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:block.png">
-   </FileRef>
-   <FileRef
-      location = "group:../../projects/me/swift_hacking/uihacking.playground">
+      location = "container:uihacking.playground">
    </FileRef>
 </Workspace>

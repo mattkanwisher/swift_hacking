@@ -83,6 +83,17 @@ class GameScene: SKScene {
         //let node = self.children[0] as SKSpriteNode
         */
     }
+    
+    override func mouseDown(theEvent:NSEvent) {
+        println(theEvent)
+    }
+
+    /*
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+
+    }
+*/
+
 }
 
 // we create our scene (from our GameScene above), like a main canvas
@@ -94,5 +105,9 @@ let view = SKView(frame: NSRect(x: 0, y: 0, width: 500, height: 500))
 // we link both
 view.presentScene(scene)
 
+
+//_window.acceptsMouseMovedEvents = YES;
+//[_window makeFirstResponder:self.skView.scene];
 // display it, XCPShowView is a global function that paints the final scene
 XCPShowView("result", view)
+
